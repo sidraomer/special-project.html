@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tourist Website</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .logo {
+    display: inline-block;
+    font-size: 2rem;
+    margin-left: 2rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+header nav ul li {
+    padding: 0.5rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff9900;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://via.placeholder.com/1500x800');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #e68a00;
+}
+
+/* Featured Destinations */
+.destinations {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.destinations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.destination-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.testimonial {
+    background-color: white;
+    padding: 2rem;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.testimonial span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-logo h1 {
+    font-size: 2rem;
+}
+
+footer .footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+footer .footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .social-media {
+    margin-top: 1rem;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Travel Pro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Explore the World with Us</h2>
+            <p>Your adventure starts here</p>
+            <button class="cta-btn">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="destinations">
+        <h2>Featured Destinations</h2>
+        <div class="destination-cards">
+            <div class="card">
+                <img src="noori.webp" alt="Destination 1">
+                <h3>Noori Waterfall</h3>
+                <p>Noori Waterfall: A breathtaking natural wonder located in the lush mountains.</p>
+            </div>
+            <div class="card">
+                <img src="Hunza.jpg" alt="Destination 2">
+                <h3>Hunza</h3>
+                <p>Hunza: Scenic valley, stunning mountains, rich culture, serene landscapes, tranquility.</p>
+            </div>
+            <div class="card">
+                <img src="raja.webp" alt="Destination 3">
+                <h3>RajaBazar</h3>
+                <p>Raja Bazaar: Bustling market, vibrant culture, shopping hub, historical significance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>"bht maza aya highly recommended"</p>
+                <span>- Abdullah</span>
+            </div>
+            <div class="testimonial">
+                <p>"Maza A Gya Oye Hoe Hoe Hoe"</p>
+                <span>- Mushtak</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1>Travel Pro</h1>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
