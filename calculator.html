@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #FABC3F, #4CC9FE, #62825D);
+        }
+
+        .calculator{
+            border: 1px solid #1A1A19;
+            padding: 20px;
+            border-radius: 16px;
+            background: transparent;
+            box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.9);
+        }
+
+        input{
+            width: 320px;
+            border: none;
+            padding: 24px;
+            margin: 10px;
+            background: transparent;
+            box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+            font-size: 40px;
+            text-align: right;
+            cursor: pointer;
+            color: white;
+        }
+
+
+        input::placeholder{
+            color: white;
+        }
+
+        button{
+            border: none;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+            background: transparent;
+            color: white;
+            font-size: 20px;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .equalBtn{
+            background-color: #fb7c14;
+        }
+
+        .opreator{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" placeholder="0" class="inputbox">
+        <div>
+            <button class="opreator">AC</button>
+            <button class="opreator">DE</button>
+            <button class="opreator">%</button>
+            <button class="opreator">/</button>
+        </div>
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="opreator">*</button>
+        </div>
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="opreator">-</button>
+        </div>
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="opreator">+</button>
+        </div>
+        <div>
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="equalBtn">=</button>
+        </div>
+    </div>
+
+    <script>
+        let input = document.querySelector('.inputbox'); // Get the input field
+        let buttons = document.querySelectorAll('button'); // Get all buttons
+        let expression = ''; // Variable to hold the input expression
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const buttonText = e.target.innerHTML; // Get the button text clicked
+
+                // Handle "=" (equals) button
+                if (buttonText === '=') {
+                    try {
+                        if (expression !== '') {
+                            // Evaluate the expression when "=" is clicked
+                            expression = eval(expression).toString();
+                            input.value = expression;  // Show result in the input box
+                        }
+                    } catch (error) {
+                        // If an error occurs (like invalid expression), show "Error"
+                        input.value = 'Error';
+                        expression = ''; // Clear the expression
+                    }
+                }
+                // Handle "AC" (clear) button
+                else if (buttonText === 'AC') {
+                    expression = ''; // Reset the expression
+                    input.value = '0'; // Display 0 in the input box
+                }
+                // Handle "DE" (delete) button
+                else if (buttonText === 'DE') {
+                    expression = expression.slice(0, -1); // Remove the last character
+                    input.value = expression || '0'; // If expression is empty, display 0
+                }
+                // For numbers and operators
+                else {
+                    if (expression === '' && buttonText === '.') {
+                        expression = '0.'; // Prevent starting with a decimal point
+                    } else {
+                        expression += buttonText; // Append clicked value to the expression
+                    }
+                    input.value = expression; // Update the input box with the expression
+                }
+            });
+        });
+    </script>
+</body>
+</html>
